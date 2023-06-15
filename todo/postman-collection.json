@@ -1,0 +1,115 @@
+{
+    "collection": {
+        "info": {
+            "_postman_id": "ebc3d61e-121d-456a-9275-f34ae7d91a79",
+            "name": "Todo",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+            "updatedAt": "2023-06-14T18:55:34.000Z",
+            "uid": "21543203-ebc3d61e-121d-456a-9275-f34ae7d91a79"
+        },
+        "item": [
+            {
+                "name": "createTask",
+                "id": "25f2ed62-e2df-46db-8daa-ed29de22b8f5",
+                "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                },
+                "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                        "mode": "raw",
+                        "raw": "{\n    \"name\": \"Test\"\n}",
+                        "options": {
+                            "raw": {
+                                "language": "json"
+                            }
+                        }
+                    },
+                    "url": {
+                        "raw": "localhost:3000/api/task/",
+                        "host": [
+                            "localhost"
+                        ],
+                        "port": "3000",
+                        "path": [
+                            "api",
+                            "task",
+                            ""
+                        ]
+                    }
+                },
+                "response": [],
+                "uid": "21543203-25f2ed62-e2df-46db-8daa-ed29de22b8f5"
+            },
+            {
+                "name": "assign Task",
+                "id": "94d246a6-70c5-4e9e-8377-1ea437061c59",
+                "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                },
+                "request": {
+                    "method": "PUT",
+                    "header": [],
+                    "body": {
+                        "mode": "raw",
+                        "raw": "{\n    \"taskId\": 1,\n    \"toAddress\": \"0xBfca9eF80af99555F4e3552348807Db55F2cb590\"\n}",
+                        "options": {
+                            "raw": {
+                                "language": "json"
+                            }
+                        }
+                    },
+                    "url": {
+                        "raw": "localhost:3000/api/task/assign",
+                        "host": [
+                            "localhost"
+                        ],
+                        "port": "3000",
+                        "path": [
+                            "api",
+                            "task",
+                            "assign"
+                        ]
+                    }
+                },
+                "response": [],
+                "uid": "21543203-94d246a6-70c5-4e9e-8377-1ea437061c59"
+            },
+            {
+                "name": "Mark to complete",
+                "id": "66d19fc9-c77c-4635-9c1d-03a52c6f3c7e",
+                "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                },
+                "request": {
+                    "method": "PUT",
+                    "header": [],
+                    "body": {
+                        "mode": "raw",
+                        "raw": "{\"taskId\": 1}",
+                        "options": {
+                            "raw": {
+                                "language": "json"
+                            }
+                        }
+                    },
+                    "url": {
+                        "raw": "localhost:3000/api/task/status",
+                        "host": [
+                            "localhost"
+                        ],
+                        "port": "3000",
+                        "path": [
+                            "api",
+                            "task",
+                            "status"
+                        ]
+                    }
+                },
+                "response": [],
+                "uid": "21543203-66d19fc9-c77c-4635-9c1d-03a52c6f3c7e"
+            }
+        ]
+    }
+}

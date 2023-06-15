@@ -1,0 +1,75 @@
+<!-- app.component.html -->
+
+<div class="container">
+  <h1>
+    Welcome to {{title}}!!
+  </h1>
+<br/>
+  <h2>
+    Create Task
+  </h2>
+  <form [formGroup]="createTask" novalidate (ngSubmit)="createTaskonWeb(createTask.value)">
+        <div class="form-group">
+            <label>Name:</label>
+            <input class="form-control" formControlName="name" type="text">
+        </div>
+        <div *ngIf="createTask.controls['name'].invalid && (createTask.controls['name'].dirty || createTask.controls['name'].touched)" class="alert alert-danger">
+            <div *ngIf="createTask.controls['name'].errors.required">
+              Name is required.
+            </div>
+        </div>
+        <button type="submit"
+            [disabled]="createTask.pristine || createTask.invalid" class="btn btn-success">
+            Create Task
+        </button>
+  </form>
+  <br />
+<h2>
+  Assign Task
+</h2>
+  <form [formGroup]="assignTask" novalidate (ngSubmit)="assignTaskonWeb(assignTask.value)">
+    <div class="form-group">
+        <label>Task Id:</label>
+        <input class="form-control" formControlName="taskId" type="number">
+    </div>
+    <div *ngIf="assignTask.controls['taskId'].invalid && (assignTask.controls['taskId'].dirty || assignTask.controls['taskId'].touched)" class="alert alert-danger">
+        <div *ngIf="assignTask.controls['taskId'].errors.required">
+          Address is required.
+        </div>
+    </div>
+    <div class="form-group">
+      <label>Address:</label>
+      <input class="form-control" formControlName="address" type="text">
+  </div>
+  <div *ngIf="assignTask.controls['address'].invalid && (assignTask.controls['address'].dirty || assignTask.controls['address'].touched)" class="alert alert-danger">
+      <div *ngIf="assignTask.controls['address'].errors.required">
+        Task Id is required.
+      </div>
+  </div>
+    <button type="submit"
+        [disabled]="assignTask.pristine || assignTask.invalid" class="btn btn-success">
+        Assign Task
+    </button>
+</form>
+
+<br />
+<h2>
+  Mark Task to Complete
+</h2>
+  <form [formGroup]="markTask" novalidate (ngSubmit)="markTaskonWeb(markTask.value)">
+    <div class="form-group">
+        <label>Task Id:</label>
+        <input class="form-control" formControlName="taskId" type="number">
+    </div>
+    <div *ngIf="markTask.controls['taskId'].invalid && (markTask.controls['taskId'].dirty || markTask.controls['taskId'].touched)" class="alert alert-danger">
+        <div *ngIf="markTask.controls['taskId'].errors.required">
+          Task Id is required.
+        </div>
+    </div>
+    <button type="submit"
+        [disabled]="markTask.pristine || markTask.invalid" class="btn btn-success">
+        Mark To Complete
+    </button>
+</form>
+<br />
+</div>
